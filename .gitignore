@@ -1,0 +1,15 @@
+node_modules
+
+.env
+
+yarn-debug.log*
+
+yarn-error.log*
+
+dados/
+
+*dados/
+
+**coverage/
+
+tests/database.sqlite
