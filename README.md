@@ -1,5 +1,9 @@
 # Discorver CEP backend
 
+[![codecov](https://codecov.io/gh/discover-cep/backend/branch/main/graph/badge.svg?token=0WE1BRHBQ1)](https://codecov.io/gh/discover-cep/backend)
+
+[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=discover-cep_backend&metric=sqale_rating)](https://sonarcloud.io/dashboard?id=discover-cep_backend)[![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=discover-cep_backend&metric=reliability_rating)](https://sonarcloud.io/dashboard?id=discover-cep_backend)[![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=discover-cep_backend&metric=security_rating)](https://sonarcloud.io/dashboard?id=discover-cep_backend)[![Lines of Code](https://sonarcloud.io/api/project_badges/measure?project=discover-cep_backend&metric=ncloc)](https://sonarcloud.io/dashboard?id=discover-cep_backend)[![Duplicated Lines (%)](https://sonarcloud.io/api/project_badges/measure?project=discover-cep_backend&metric=duplicated_lines_density)](https://sonarcloud.io/dashboard?id=discover-cep_backend)[![Duplicated Lines (%)](https://sonarcloud.io/api/project_badges/measure?project=discover-cep_backend&metric=duplicated_lines_density)](https://sonarcloud.io/dashboard?id=discover-cep_backend)[![Bugs](https://sonarcloud.io/api/project_badges/measure?project=discover-cep_backend&metric=bugs)](https://sonarcloud.io/dashboard?id=discover-cep_backend)
+
 ## Dependências
 
 - [git](https://git-scm.com/)
