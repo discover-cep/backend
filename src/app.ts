@@ -1,7 +1,7 @@
 import express from 'express';
 import cors from 'cors';
 
-import consultaRoutes from './routes/consulta';
+import consultaRoutes from './routes/ConsultaRoutes';
 
 const app = express();
 

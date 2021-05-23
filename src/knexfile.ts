@@ -1,8 +1,12 @@
+import dotenv from 'dotenv';
+
+dotenv.config();
+
 interface DatabaseData {
-  host: string;
-  port: number;
-  user: string;
-  password: string;
+  host: string | undefined;
+  port: number | undefined;
+  user: string | undefined;
+  password: string | undefined;
 }
 
 interface Pool {
@@ -31,10 +35,10 @@ export interface Connection {
 export const development = {
   client: 'postgresql',
   connection: {
-    host: 'db',
-    port: 5432,
-    user: 'admin',
-    password: 'root',
+    host: process.env.DB_HOST_DEVELOPMENT || 'db',
+    port: parseInt(process.env.DB_PORT_DEVELOPMENT || '5432', 10),
+    user: process.env.DB_USER_DEVELOPMENT || 'admin',
+    password: process.env.DB_PASS_DEVELOPMENT || 'root',
   },
   pool: {
     min: 2,
@@ -62,10 +66,10 @@ export const test = {
 export const production = {
   client: 'postgresql',
   connection: {
-    host: 'db',
-    port: 5432,
-    user: 'admin',
-    password: 'root',
+    host: process.env.DB_HOST_PRODUCTION,
+    port: parseInt(process.env.DB_PORT_PRODUCTION || '', 10),
+    user: process.env.DB_USER_PRODUCTION,
+    password: process.env.DB_PASS_PRODUCTION,
   },
   pool: {
     min: 2,

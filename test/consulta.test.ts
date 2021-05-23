@@ -1,7 +1,7 @@
 import request from 'supertest';
 
 import app from '../src/app';
-import knex from '../src/database/connection';
+import knex from '../src/database/KnexConnection';
 
 beforeAll(async () => {
   await knex.migrate.latest();
@@ -13,7 +13,7 @@ afterAll(async () => {
   await knex.destroy();
 });
 
-test('select users', async () => {
+test('get address', async () => {
   const response = await request(app).get('/v1/consulta/35680250');
   expect(response.body).toHaveProperty('cep');
   expect(response.body).toHaveProperty('logradouro');

@@ -1,7 +1,7 @@
 import { v4 } from 'uuid';
 import type { RequestHandler } from 'express';
-import getCep from '../services/getCep';
-import knex from '../database/connection';
+import getCep from '../services/getNewCep';
+import knex from '../database/KnexConnection';
 
 interface Controller {
   Consulta: RequestHandler;
@@ -18,7 +18,7 @@ interface Addr {
   uf: string;
 }
 
-const boatController:Controller = {
+const ConsultaController:Controller = {
   async Consulta(req, res) {
     try {
       const { cep } = req.params;
@@ -39,6 +39,8 @@ const boatController:Controller = {
         delete addr.ibge;
         delete addr.ddd;
         delete addr.gia;
+        const splitedCep = addr.cep.split('-');
+        addr.cep = splitedCep[0] + splitedCep[1];
         const trx = await knex.transaction();
         try {
           const id = v4();
@@ -57,7 +59,6 @@ const boatController:Controller = {
           await trx.commit();
           return res.json(addr);
         } catch (error) {
-          console.log(error);
           await trx.rollback();
           return res.json(addr);
         }
@@ -66,7 +67,6 @@ const boatController:Controller = {
         error: 'Cep not found',
       });
     } catch (e) {
-      console.log(e);
       return res.status(400).json({
         error: 'Unexpected error getting cep',
       });
@@ -74,4 +74,4 @@ const boatController:Controller = {
   },
 };
 
-export default boatController;
+export default ConsultaController;
