@@ -12,4 +12,6 @@ dados/
 
 **coverage/
 
+**/pgsqldata
+
 tests/database.sqlite
