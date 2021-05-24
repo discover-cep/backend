@@ -3,7 +3,7 @@ version: '3'
 services:
   db:
     image: postgres:alpine
-    container_name: postgres-controlboat
+    container_name: postgres_discover_cep
     restart: always
     ports:
       - "5432:5432"
@@ -16,8 +16,8 @@ services:
     networks: 
       - network-api
   api:
-    container_name: control_boat_api
-    image: control_boat_api
+    container_name: discover_cep_api
+    image: discorver_cep_api
     depends_on:
       - db
     command: /bin/sh -c "yarn knex:migrate:undo && yarn knex:migrate && yarn knex:seed && yarn start"
