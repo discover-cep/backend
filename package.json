@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon --exec ts-node ./src/server.ts",
-    "postinstall": "node ./scripts/postinstall.js || npm run build",
+    "postinstall": "node ./scripts/postinstall.js || (yarn run build && knex --knexfile ./src/knexfile.ts migrate:latest)",
     "build": "tsc",
     "knex:migrate": "knex --knexfile ./src/knexfile.ts migrate:latest",
     "knex:migrate:undo": "knex --knexfile ./src/knexfile.ts migrate:rollback --all",
