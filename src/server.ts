@@ -1,3 +1,4 @@
 import app from './app';
 
-app.listen(3333);
+if (process.env.NODE_ENV != 'production') app.listen(3333);
+else app.listen(process.env.PORT)
