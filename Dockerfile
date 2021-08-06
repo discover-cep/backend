@@ -4,7 +4,9 @@ WORKDIR /app
 
 COPY package.json ./
 
-RUN yarn install 
+COPY scripts ./scripts
+
+RUN SKIP_BUILD=1 yarn install
 
 COPY . .
 
