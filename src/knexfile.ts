@@ -65,7 +65,7 @@ export const test = {
 };
 export const production = {
   client: 'postgresql',
-  connection: (process.env.DATABASE_URL || '')+'?ssl=true',
+  connection: (process.env.DATABASE_URL || '')+'?sslmode=require',
   pool: {
     min: 2,
     max: 10,
